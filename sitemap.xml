@@ -25,6 +25,48 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://iitianshometutors.in/cbse-class-10/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/icse-class-10/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/ssc-class-10/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/cbse-class-9/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/icse-class-9/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/ssc-class-9/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/icse-class-8/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://iitianshometutors.in/class-10-tuition/</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,7 +79,43 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://iitianshometutors.in/igcse-tuition/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/ib-myp-tuition/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/online-tuition/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://iitianshometutors.in/jee-foundation/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/foundation-class-9/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/foundation-class-10/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iitianshometutors.in/foundation-class-8/</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -47,11 +125,5 @@
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iitianshometutors.in/online-tuition/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
