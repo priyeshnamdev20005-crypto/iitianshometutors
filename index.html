@@ -526,11 +526,16 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
 @media(min-width:760px){footer{padding-bottom:40px}}
 .ft{display:grid;gap:18px}
 @media(min-width:760px){.ft{grid-template-columns:1.3fr 1fr 1fr;gap:28px}}
-@media(min-width:1000px){.ft{grid-template-columns:1.5fr .9fr 1.1fr .9fr;gap:26px}}
+@media(min-width:1000px){.ft{grid-template-columns:1.4fr .8fr 1.25fr .8fr;gap:26px}}
+.ft .cols2{grid-template-columns:1fr 1fr;gap:5px 16px}
 .ft h4{font-size:14.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;font-family:var(--f-body);font-weight:700}
 .ft p,.ft li{font-size:16px}
 .ft ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
 .ft .brand{margin-bottom:10px}
+.px-h{margin:26px 0 0;font-family:var(--f-body);font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--purple);display:flex;align-items:center;gap:12px}
+.px-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.px-h2{margin-top:34px}
+.px-grid{margin-top:14px}
 .px-grid{display:grid;gap:14px;margin-top:24px}
 @media(min-width:680px){.px-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:1040px){.px-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
@@ -538,7 +543,7 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
 .px-card:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:rgba(84,42,128,.28)}
 .px-card b{display:block;font-family:var(--f-head);font-size:19px;font-weight:600;color:var(--purple-d);line-height:1.24}
 .px-card span{display:block;margin-top:7px;font-size:14.8px;color:var(--muted);line-height:1.5}
-.px-card i{display:block;margin-top:auto;padding-top:11px;font-style:normal;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--teal)}
+.px-card>i{display:block;margin-top:auto;padding-top:11px;font-style:normal;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--teal)}
 .copy{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-size:14.6px;color:var(--muted);text-align:center}
 
 /* ============ mobile sticky bar ============ */
@@ -955,16 +960,40 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
   <div class="wrap">
     <p class="eyebrow rv"><i></i>Pick your exam</p>
     <h2 class="rv">Which one is your child preparing for?</h2>
-    <p class="lede rv">Every exam asks for something different &mdash; a different chapter list, a different way of writing the answer. Open the page for yours and you will see exactly how I teach it, what we cover, and what I do not teach.</p>
+    <p class="lede rv">Twenty pages, one for each thing I actually teach &mdash; every board, every class, every exam. Open the one that is yours and you will see the real chapter list, the real paper pattern, and what I do <em>not</em> teach.</p>
+    <h3 class="px-h">Competitive exams</h3>
     <div class="px-grid">
-      <a class="px-card rv" href="/jee-tutor/"><b>JEE Main &amp; Advanced tutor</b><span>Physics, Chemistry and Maths for JEE Main and Advanced &mdash; 75 questions, 300 marks &mdash; taught one-to-one at your home.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/neet-tutor/"><b>NEET Physics &amp; Chemistry</b><span>The 360 marks of NEET that are Physics and Chemistry, chapter by chapter. Biology I do not teach, and I say so up front.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/mht-cet-tutor/"><b>MHT-CET tutor (PCM)</b><span>Maharashtra CET with its 80% Class 12 weightage, two-mark Maths questions and no negative marking.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/class-10-tuition/"><b>Class 10 SSC tuition</b><span>Algebra, Geometry and Science Part 1 for the Maharashtra SSC board, with board-pattern practice papers.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/icse-tuition/"><b>ICSE tuition, Class 8&ndash;10</b><span>Selina Concise and Viraf Dalal worked line by line, the way ICSE marking actually wants it written.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/jee-foundation/"><b>JEE foundation, Class 8&ndash;10</b><span>An early, unhurried start on the Physics, Chemistry and Maths that JEE and the olympiads later assume.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/olympiad-coaching/"><b>Olympiad coaching</b><span>SOF IMO and NSO, NSTSE, the IOQM &rarr; RMO &rarr; INMO ladder, IOQP and IOQC, and Homi Bhabha for Std 9.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/online-tuition/"><b>Online tuition, worldwide</b><span>One-to-one online on a writing tablet, with evening IST slots that fit the Gulf, the UK, Singapore and the US.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/jee-tutor/"><b>JEE Main &amp; Advanced</b><span>Physics, Chemistry and Maths for Class 11, 12 and droppers &mdash; 75 questions, 300 marks.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/neet-tutor/"><b>NEET Physics &amp; Chemistry</b><span>The 360 marks of NEET that are Physics and Chemistry. Biology I do not teach, and I say so up front.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/mht-cet-tutor/"><b>MHT-CET (PCM)</b><span>Maharashtra CET with its 80% Class 12 weightage and no negative marking.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/olympiad-coaching/"><b>Olympiads &amp; scholarships</b><span>SOF IMO and NSO, NSTSE, IOQM &rarr; RMO &rarr; INMO, IOQP and IOQC, Homi Bhabha Std 9.</span><i>Read more &rarr;</i></a>
+    </div>
+    <h3 class="px-h px-h2">Board tuition, class by class</h3>
+    <div class="px-grid">
+      <a class="px-card rv" href="/ssc-class-9/"><b>SSC Class 9</b><span>Balbharati Algebra and Geometry, and the Physics and Chemistry half of Science and Technology.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/ssc-class-10/"><b>SSC Class 10</b><span>Algebra 40, Geometry 40 and Science Part 1 &mdash; two-hour papers, no negative marking.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/cbse-class-9/"><b>CBSE Class 9</b><span>The brand-new 2026-27 NCERT books &mdash; <i>Exploration</i> and <i>Ganita Manjari</i>.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/cbse-class-10/"><b>CBSE Class 10</b><span>Science and Maths, Standard or Basic, and a plan for the February and May board attempts.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/icse-class-8/"><b>ICSE Class 8</b><span>Selina Concise, and the year the algebra gap either closes or follows your child to Class 10.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/icse-class-9/"><b>ICSE Class 9</b><span>Gas laws, bonding, mid-point theorem, logarithms &mdash; the base Class 10 never reteaches.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/icse-class-10/"><b>ICSE Class 10</b><span>Three 80-mark science papers, two hours each, and a Section B where choosing well earns marks.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/class-10-tuition/"><b>Class 10 &mdash; compare boards</b><span>SSC, CBSE and ICSE Class 10 set side by side, without the sales pitch.</span><i>Read more &rarr;</i></a>
+    </div>
+    <h3 class="px-h px-h2">International curricula</h3>
+    <div class="px-grid">
+      <a class="px-card rv" href="/igcse-tuition/"><b>Cambridge IGCSE</b><span>Physics 0625, Chemistry 0620, Maths 0580 and Additional Maths 0606 &mdash; Core and Extended.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/ib-myp-tuition/"><b>IB MYP 4 &amp; 5</b><span>Sciences and mathematics against criteria A to D, plus the computation fluency DP assumes.</span><i>Read more &rarr;</i></a>
+    </div>
+    <h3 class="px-h px-h2">The early start</h3>
+    <div class="px-grid">
+      <a class="px-card rv" href="/jee-foundation/"><b>Foundation &mdash; the plan</b><span>Class 8 to 10, so that Class 11 and 12 are a second pass instead of a first one.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/foundation-class-8/"><b>Foundation, Class 8</b><span>Algebra, units and chemical notation made automatic. No JEE questions yet, on purpose.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/foundation-class-9/"><b>Foundation, Class 9</b><span>The Class 11 syllabus begun properly &mdash; mechanics, mole concept, trigonometry.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/foundation-class-10/"><b>Foundation, Class 10</b><span>Board first, then calculus and organic chemistry opened in the gap after the exams.</span><i>Read more &rarr;</i></a>
+    </div>
+    <h3 class="px-h px-h2">Anywhere</h3>
+    <div class="px-grid">
+      <a class="px-card rv" href="/online-tuition/"><b>Online tuition, worldwide</b><span>One-to-one on a writing tablet, with evening IST slots that fit the Gulf, the UK, Singapore and the US.</span><i>Read more &rarr;</i></a>
     </div>
   </div>
 </section>
@@ -990,15 +1019,27 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
         </ul>
       </div>
       <div>
-        <h4>Exams I teach</h4>
-        <ul>
+        <h4>All 20 pages</h4>
+        <ul class="cols2">
           <li><a href="/jee-tutor/">JEE tutor</a></li>
-          <li><a href="/neet-tutor/">NEET Physics &amp; Chemistry</a></li>
-          <li><a href="/mht-cet-tutor/">MHT-CET tutor</a></li>
-          <li><a href="/class-10-tuition/">Class 10 SSC</a></li>
-          <li><a href="/icse-tuition/">ICSE Class 8&ndash;10</a></li>
-          <li><a href="/jee-foundation/">JEE foundation</a></li>
-          <li><a href="/olympiad-coaching/">Olympiad coaching</a></li>
+          <li><a href="/neet-tutor/">NEET P &amp; C</a></li>
+          <li><a href="/mht-cet-tutor/">MHT-CET</a></li>
+          <li><a href="/olympiad-coaching/">Olympiads</a></li>
+          <li><a href="/ssc-class-9/">SSC Class 9</a></li>
+          <li><a href="/ssc-class-10/">SSC Class 10</a></li>
+          <li><a href="/cbse-class-9/">CBSE Class 9</a></li>
+          <li><a href="/cbse-class-10/">CBSE Class 10</a></li>
+          <li><a href="/icse-class-8/">ICSE Class 8</a></li>
+          <li><a href="/icse-class-9/">ICSE Class 9</a></li>
+          <li><a href="/icse-class-10/">ICSE Class 10</a></li>
+          <li><a href="/icse-tuition/">ICSE &mdash; all years</a></li>
+          <li><a href="/igcse-tuition/">IGCSE</a></li>
+          <li><a href="/ib-myp-tuition/">IB MYP</a></li>
+          <li><a href="/jee-foundation/">Foundation plan</a></li>
+          <li><a href="/foundation-class-8/">Foundation Cl 8</a></li>
+          <li><a href="/foundation-class-9/">Foundation Cl 9</a></li>
+          <li><a href="/foundation-class-10/">Foundation Cl 10</a></li>
+          <li><a href="/class-10-tuition/">Class 10 &mdash; boards</a></li>
           <li><a href="/online-tuition/">Online tuition</a></li>
         </ul>
       </div>
