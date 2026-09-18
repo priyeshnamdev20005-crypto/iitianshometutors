@@ -532,13 +532,73 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
 .ft p,.ft li{font-size:16px}
 .ft ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
 .ft .brand{margin-bottom:10px}
+.px-all{margin:22px 0 0;text-align:center}
+.px-all a{font-family:var(--f-body);font-size:15.5px;font-weight:700;color:var(--purple);border-bottom:2px solid rgba(84,42,128,.28);padding-bottom:2px}
+/* ============ header course menu ============ */
+.mnu{margin-left:auto;flex:0 0 auto}
+.mnu>summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--f-body);font-size:15px;font-weight:700;color:var(--ink);
+  padding:10px 15px;border-radius:12px;border:1.5px solid var(--line);
+  background:#fff;white-space:nowrap;transition:border-color .18s,box-shadow .18s;
+}
+.mnu>summary::-webkit-details-marker{display:none}
+.mnu>summary::marker{content:""}
+.mnu>summary:hover{border-color:rgba(84,42,128,.4)}
+.mnu[open]>summary{border-color:var(--purple);box-shadow:0 0 0 3px rgba(84,42,128,.12)}
+.mnu-i{position:relative;width:17px;height:12px;flex:0 0 auto}
+.mnu-i::before,.mnu-i::after,.mnu-i>i{
+  content:"";position:absolute;left:0;right:0;height:2.2px;border-radius:2px;
+  background:var(--purple);transition:transform .2s,opacity .2s;
+}
+.mnu-i::before{top:0}
+.mnu-i>i{top:4.9px}
+.mnu-i::after{bottom:0}
+.mnu[open] .mnu-i::before{transform:translateY(4.9px) rotate(45deg)}
+.mnu[open] .mnu-i>i{opacity:0}
+.mnu[open] .mnu-i::after{transform:translateY(-4.9px) rotate(-45deg)}
+.mnu-p{
+  position:absolute;top:calc(100% - 2px);right:20px;z-index:60;
+  width:min(90vw,340px);max-height:calc(100vh - 110px);overflow:auto;
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 22px 50px rgba(29,23,48,.17);padding:6px 8px 10px;
+}
+.mnu-c{padding:8px 6px 4px}
+.mnu-c+.mnu-c{border-top:1px solid var(--line)}
+.mnu-c h5{
+  margin:0 0 5px;font-family:var(--f-body);font-size:11.5px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+}
+.mnu-c a{
+  display:block;padding:8px 10px;border-radius:9px;font-size:15px;
+  font-weight:600;color:var(--body);line-height:1.3;
+}
+.mnu-c a:hover{background:rgba(84,42,128,.07);color:var(--purple)}
+.mnu-c a[aria-current=page]{color:var(--purple);background:rgba(84,42,128,.09)}
+@media(min-width:900px){
+  .mnu-p{width:600px;padding:10px 14px 14px;column-count:2;column-gap:24px}
+  .mnu-c{break-inside:avoid}
+  .mnu-c+.mnu-c{border-top:0}
+}
+@media(min-width:1210px){.mnu-p{right:calc((100% - var(--max))/2 + 20px)}}
+.hd .mnu+.btn{margin-left:10px}
+/* the menu now carries the navigation, so the old link row only shows when
+   there is genuinely room for it, and the header stays readable on a phone */
+.nav a{white-space:nowrap}
+@media(max-width:1199px){.nav{display:none}}
+@media(max-width:600px){
+  .brand b{font-size:15.8px;white-space:normal;overflow:visible;text-overflow:clip}
+  .brand b+span,.brand small{display:none}
+  .hd-cta{display:none}
+  .mnu>summary{padding:10px 13px;font-size:14.5px}
+}
 .px-h{margin:26px 0 0;font-family:var(--f-body);font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--purple);display:flex;align-items:center;gap:12px}
 .px-h::after{content:"";flex:1;height:1px;background:var(--line)}
 .px-h2{margin-top:34px}
 .px-grid{margin-top:14px}
 .px-grid{display:grid;gap:14px;margin-top:24px}
 @media(min-width:680px){.px-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:1040px){.px-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+@media(min-width:1040px){.px-grid{grid-template-columns:1fr 1fr 1fr}}
 .px-card{display:flex;flex-direction:column;padding:17px 18px 16px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh-1);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .px-card:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:rgba(84,42,128,.28)}
 .px-card b{display:block;font-family:var(--f-head);font-size:19px;font-weight:600;color:var(--purple-d);line-height:1.24}
@@ -583,6 +643,7 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <details class="mnu"><summary aria-label="Open the course menu"><span class="mnu-i"><i></i></span><span>All courses</span></summary><div class="mnu-p"><div class="mnu-c"><h5>Exams</h5><a href="/jee-tutor/">JEE Main &amp; Advanced</a><a href="/neet-tutor/">NEET Physics &amp; Chemistry</a><a href="/mht-cet-tutor/">MHT-CET</a><a href="/olympiad-coaching/">Olympiads &amp; NSTSE</a></div><div class="mnu-c"><h5>SSC &amp; CBSE</h5><a href="/ssc-class-9/">SSC Class 9</a><a href="/ssc-class-10/">SSC Class 10</a><a href="/cbse-class-9/">CBSE Class 9</a><a href="/cbse-class-10/">CBSE Class 10</a><a href="/class-10-tuition/">Class 10 &mdash; compare boards</a></div><div class="mnu-c"><h5>ICSE &amp; international</h5><a href="/icse-class-8/">ICSE Class 8</a><a href="/icse-class-9/">ICSE Class 9</a><a href="/icse-class-10/">ICSE Class 10</a><a href="/icse-tuition/">ICSE &mdash; all years</a><a href="/igcse-tuition/">Cambridge IGCSE</a><a href="/ib-myp-tuition/">IB MYP 4 &amp; 5</a></div><div class="mnu-c"><h5>Foundation</h5><a href="/jee-foundation/">The foundation plan</a><a href="/foundation-class-8/">Foundation Class 8</a><a href="/foundation-class-9/">Foundation Class 9</a><a href="/foundation-class-10/">Foundation Class 10</a></div><div class="mnu-c"><h5>Online &amp; everything else</h5><a href="/online-tuition/">Online tuition, worldwide</a><a href="/courses/">See all pages on one page</a><a href="/">Home page</a></div></div></details>
     <div class="hd-cta">
       <a class="btn btn-p" href="tel:+917977475848">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
@@ -960,41 +1021,16 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
   <div class="wrap">
     <p class="eyebrow rv"><i></i>Pick your exam</p>
     <h2 class="rv">Which one is your child preparing for?</h2>
-    <p class="lede rv">Twenty pages, one for each thing I actually teach &mdash; every board, every class, every exam. Open the one that is yours and you will see the real chapter list, the real paper pattern, and what I do <em>not</em> teach.</p>
-    <h3 class="px-h">Competitive exams</h3>
+    <p class="lede rv">Six subjects, and a page for every board and class inside them. Open the one that is yours and you will see the real chapter list, the real paper pattern, and what I do <em>not</em> teach.</p>
     <div class="px-grid">
       <a class="px-card rv" href="/jee-tutor/"><b>JEE Main &amp; Advanced</b><span>Physics, Chemistry and Maths for Class 11, 12 and droppers &mdash; 75 questions, 300 marks.</span><i>Read more &rarr;</i></a>
       <a class="px-card rv" href="/neet-tutor/"><b>NEET Physics &amp; Chemistry</b><span>The 360 marks of NEET that are Physics and Chemistry. Biology I do not teach, and I say so up front.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/mht-cet-tutor/"><b>MHT-CET (PCM)</b><span>Maharashtra CET with its 80% Class 12 weightage and no negative marking.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/olympiad-coaching/"><b>Olympiads &amp; scholarships</b><span>SOF IMO and NSO, NSTSE, IOQM &rarr; RMO &rarr; INMO, IOQP and IOQC, Homi Bhabha Std 9.</span><i>Read more &rarr;</i></a>
-    </div>
-    <h3 class="px-h px-h2">Board tuition, class by class</h3>
-    <div class="px-grid">
-      <a class="px-card rv" href="/ssc-class-9/"><b>SSC Class 9</b><span>Balbharati Algebra and Geometry, and the Physics and Chemistry half of Science and Technology.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/ssc-class-10/"><b>SSC Class 10</b><span>Algebra 40, Geometry 40 and Science Part 1 &mdash; two-hour papers, no negative marking.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/cbse-class-9/"><b>CBSE Class 9</b><span>The brand-new 2026-27 NCERT books &mdash; <i>Exploration</i> and <i>Ganita Manjari</i>.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/cbse-class-10/"><b>CBSE Class 10</b><span>Science and Maths, Standard or Basic, and a plan for the February and May board attempts.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/icse-class-8/"><b>ICSE Class 8</b><span>Selina Concise, and the year the algebra gap either closes or follows your child to Class 10.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/icse-class-9/"><b>ICSE Class 9</b><span>Gas laws, bonding, mid-point theorem, logarithms &mdash; the base Class 10 never reteaches.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/icse-class-10/"><b>ICSE Class 10</b><span>Three 80-mark science papers, two hours each, and a Section B where choosing well earns marks.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/class-10-tuition/"><b>Class 10 &mdash; compare boards</b><span>SSC, CBSE and ICSE Class 10 set side by side, without the sales pitch.</span><i>Read more &rarr;</i></a>
-    </div>
-    <h3 class="px-h px-h2">International curricula</h3>
-    <div class="px-grid">
-      <a class="px-card rv" href="/igcse-tuition/"><b>Cambridge IGCSE</b><span>Physics 0625, Chemistry 0620, Maths 0580 and Additional Maths 0606 &mdash; Core and Extended.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/ib-myp-tuition/"><b>IB MYP 4 &amp; 5</b><span>Sciences and mathematics against criteria A to D, plus the computation fluency DP assumes.</span><i>Read more &rarr;</i></a>
-    </div>
-    <h3 class="px-h px-h2">The early start</h3>
-    <div class="px-grid">
-      <a class="px-card rv" href="/jee-foundation/"><b>Foundation &mdash; the plan</b><span>Class 8 to 10, so that Class 11 and 12 are a second pass instead of a first one.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/foundation-class-8/"><b>Foundation, Class 8</b><span>Algebra, units and chemical notation made automatic. No JEE questions yet, on purpose.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/foundation-class-9/"><b>Foundation, Class 9</b><span>The Class 11 syllabus begun properly &mdash; mechanics, mole concept, trigonometry.</span><i>Read more &rarr;</i></a>
-      <a class="px-card rv" href="/foundation-class-10/"><b>Foundation, Class 10</b><span>Board first, then calculus and organic chemistry opened in the gap after the exams.</span><i>Read more &rarr;</i></a>
-    </div>
-    <h3 class="px-h px-h2">Anywhere</h3>
-    <div class="px-grid">
+      <a class="px-card rv" href="/class-10-tuition/"><b>Class 10 &mdash; SSC, CBSE, ICSE</b><span>All three Class 10 boards side by side, each with a page of its own, and no sales pitch.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/icse-tuition/"><b>ICSE &amp; international</b><span>ICSE Class 8 to 10, Cambridge IGCSE and IB MYP &mdash; Selina, Dalal, 0625, 0580, criteria A to D.</span><i>Read more &rarr;</i></a>
+      <a class="px-card rv" href="/jee-foundation/"><b>JEE &amp; NEET foundation</b><span>Class 8 to 10, so that Class 11 and 12 are a second pass over the syllabus instead of a first one.</span><i>Read more &rarr;</i></a>
       <a class="px-card rv" href="/online-tuition/"><b>Online tuition, worldwide</b><span>One-to-one on a writing tablet, with evening IST slots that fit the Gulf, the UK, Singapore and the US.</span><i>Read more &rarr;</i></a>
     </div>
+    <p class="px-all"><a href="/courses/">See every board, class and exam &mdash; all pages &rarr;</a></p>
   </div>
 </section>
 
@@ -1019,28 +1055,19 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
         </ul>
       </div>
       <div>
-        <h4>All 20 pages</h4>
-        <ul class="cols2">
+        <h4>Pages</h4>
+        <ul>
           <li><a href="/jee-tutor/">JEE tutor</a></li>
           <li><a href="/neet-tutor/">NEET P &amp; C</a></li>
           <li><a href="/mht-cet-tutor/">MHT-CET</a></li>
           <li><a href="/olympiad-coaching/">Olympiads</a></li>
-          <li><a href="/ssc-class-9/">SSC Class 9</a></li>
           <li><a href="/ssc-class-10/">SSC Class 10</a></li>
-          <li><a href="/cbse-class-9/">CBSE Class 9</a></li>
           <li><a href="/cbse-class-10/">CBSE Class 10</a></li>
-          <li><a href="/icse-class-8/">ICSE Class 8</a></li>
-          <li><a href="/icse-class-9/">ICSE Class 9</a></li>
           <li><a href="/icse-class-10/">ICSE Class 10</a></li>
-          <li><a href="/icse-tuition/">ICSE &mdash; all years</a></li>
-          <li><a href="/igcse-tuition/">IGCSE</a></li>
-          <li><a href="/ib-myp-tuition/">IB MYP</a></li>
+          <li><a href="/igcse-tuition/">IGCSE &amp; IB</a></li>
           <li><a href="/jee-foundation/">Foundation plan</a></li>
-          <li><a href="/foundation-class-8/">Foundation Cl 8</a></li>
-          <li><a href="/foundation-class-9/">Foundation Cl 9</a></li>
-          <li><a href="/foundation-class-10/">Foundation Cl 10</a></li>
-          <li><a href="/class-10-tuition/">Class 10 &mdash; boards</a></li>
           <li><a href="/online-tuition/">Online tuition</a></li>
+          <li><a href="/courses/"><strong>All pages &rarr;</strong></a></li>
         </ul>
       </div>
       <div>
@@ -1076,6 +1103,8 @@ footer{padding:36px 0 104px;border-top:1px solid var(--line);margin-top:56px}
 (function(){
   var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var mn=document.querySelector('.mnu');if(mn){addEventListener('click',function(e){if(!mn.contains(e.target))mn.open=false});addEventListener('keydown',function(e){if(e.key=='Escape')mn.open=false})}
 
   /* sticky header state */
   var hd = document.getElementById('hd');
