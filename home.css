@@ -764,6 +764,3 @@ th{background:var(--lav)}
 .rev:nth-child(3) .av{background:linear-gradient(135deg,#ffb38a,#f08a3c)}
 .rev:nth-child(4) .av{background:linear-gradient(135deg,#ff9cc0,#d1356f)}
 .gbadge{border-radius:999px;background:#fff;border:1.5px solid var(--lav-2)}
-
-/* ==== site-order:v1 — two more menu items fit on narrow laptops ==== */
-@media(min-width:1080px) and (max-width:1319px){.site-nav .nl,.dd>summary{padding:9px 8px;font-size:14px}.site-nav{gap:0}.site-call{padding:10px 13px}}
