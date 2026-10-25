@@ -406,3 +406,6 @@ th{background:var(--lav)}
   .ph-art img,.cu-art img,.cu-sticker img,.cu-sky *,.cu-track,.cu-hl,.cu-ph::before,.hub-hd::after,.phero::before,.phero::after,.btn:hover svg,.flow .dot{animation:none!important}
   .btn,.card{transition:none}
 }
+
+/* ==== site-order:v1 — two more menu items fit on narrow laptops ==== */
+@media(min-width:1080px) and (max-width:1319px){.site-nav .nl,.dd>summary{padding:9px 8px;font-size:14px}.site-nav{gap:0}.site-call{padding:10px 13px}}
