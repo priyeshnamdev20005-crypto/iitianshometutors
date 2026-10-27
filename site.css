@@ -534,26 +534,57 @@ th{background:var(--lav)}
   .cm-page .cm-set.on[data-cols="n"]{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
   .cm-page .cm-i{min-height:76px}
 }
-/* ==== home-hub:v2 — six cards ==== */
-.hub.hub6{display:block;columns:1;column-gap:20px}
-.hub.hub6 .hub-card{grid-column:auto;break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 20px;width:100%}
-@media(min-width:760px){.hub.hub6{columns:2}}
-@media(min-width:1180px){.hub.hub6{columns:3}}
+/* ==== home-hub:v3 — six equal cards in a slider ==== */
+.hub-slider{position:relative;margin-top:28px}
+.hs-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 6px 22px;margin:0 -6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.hs-track::-webkit-scrollbar{display:none}
+.hs-track>.hub-card{flex:0 0 calc((100% - 40px)/3);min-width:0;scroll-snap-align:start;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+@media(max-width:1099px){.hs-track>.hub-card{flex-basis:calc((100% - 20px)/2)}}
+@media(max-width:699px){.hs-track>.hub-card{flex-basis:88%}}
+.hub-slider .hub-hd h3{font-size:21px}
+.hub-slider .hub-boards{padding:4px 18px 8px;flex:1}
+.hub-slider .hub-boards li{display:block;padding:12px 2px}
+.hub-slider .hb-n{margin-bottom:8px}
+.hub-slider .hb-c{gap:6px}
+.hub-slider .hb-c a{min-height:32px;padding:4px 11px;font-size:12.5px;transition:transform .15s,background .15s,color .15s,border-color .15s,box-shadow .15s}
+.hub-slider .hb-c a.n{width:32px;min-width:32px;padding:0;justify-content:center}
+.hub-slider .hb-c a.pg{border-color:var(--purple-l);background:var(--lav)}
+.hub-slider .hb-c a:hover,.hub-slider .hb-c a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(91,69,214,.22);background:var(--purple);color:#fff;border-color:var(--purple)}
+.hub-slider .hb-c a:active{transform:scale(.94)}
+.hub-slider .hub-list{flex:1;padding:6px 10px 8px}
+.hub-slider .hub-list a{padding:10px 36px 10px 12px}
+.hub-slider .hub-list b{font-size:15px}
+.hub-slider .hub-list span{font-size:13px}
+.hub-slider .hub-list a:active{transform:scale(.98)}
+.hub-slider .hub-foot{margin-top:auto}
+@media(hover:hover){.hs-track>.hub-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(76,64,160,.10),0 30px 60px rgba(76,64,160,.16)}}
+.hs-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:4px}
+.hs-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--lav-2);background:#fff;color:var(--purple);font-size:20px;font-weight:800;cursor:pointer;box-shadow:var(--sh-1);transition:background .15s,color .15s,transform .15s}
+.hs-btn:hover{background:var(--purple);color:#fff}
+.hs-btn:active{transform:scale(.92)}
+.hs-btn[disabled]{opacity:.35;cursor:default;background:#fff;color:var(--purple)}
+.hs-dots{display:flex;gap:8px}
+.hs-dots button{width:10px;height:10px;border-radius:999px;border:0;padding:0;background:var(--lav-2);cursor:pointer;transition:width .2s,background .2s}
+.hs-dots button.on{width:26px;background:var(--purple)}
 .hc-jc{--hbg:linear-gradient(135deg,#fff5d1,#ffeedd);--hc:#b26b00;--hart:url(/img/cu/notes-700.jpg)}
 .hc-kids{--hbg:linear-gradient(135deg,#ffecf3,#f1edff);--hc:#d1356f;--hart:url(/img/cu/student-700.jpg)}
 .hc-comp{--hbg:linear-gradient(135deg,#eaf4ff,#e3f7ef);--hc:#2f68cc;--hart:url(/img/cu/hero-700.jpg)}
-.hub6 .hb-c a{min-height:34px;padding:5px 12px;font-size:13px;transition:transform .15s,background .15s,color .15s,border-color .15s,box-shadow .15s}
-.hub6 .hb-c a.pg{border-color:var(--purple-l)}
-.hub6 .hb-c a:hover,.hub6 .hb-c a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(91,69,214,.22)}
-.hub6 .hb-c a:active{transform:scale(.95)}
-.hub6 .hub-card{transition:transform .2s,box-shadow .2s}
-.hub6 .hub-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(76,64,160,.10),0 30px 60px rgba(76,64,160,.16)}
-.hub6 .hub-list a:active{transform:scale(.98)}
-@media(hover:none){.hub6 .hub-card:hover{transform:none}}
-/* ==== wide:v1 — use the whole screen width ==== */
-:root{--max:100%}
+/* ==== wide:v2 — wider than before, still easy on the eyes ==== */
+:root{--max:1320px}
 @media(min-width:768px){
-  .wrap,.site-hd-in,.ft-in{padding-left:clamp(20px,2.6vw,48px);padding-right:clamp(20px,2.6vw,48px)}
-  .ft-legal{padding-left:clamp(20px,2.6vw,48px);padding-right:clamp(20px,2.6vw,48px)}
+  .wrap,.site-hd-in,.ft-in,.ft-legal{padding-left:28px;padding-right:28px}
 }
 @media(max-width:1079px){.cm-page .cm-card{padding-right:108px}.cm-page .cm-art{width:82px;height:55px;right:12px;top:14px;bottom:auto}}
+@media(min-width:1080px){.dd-cm .dd-card.cm{max-width:1264px}}
+/* compact, equal cards */
+.hub-slider .hub-boards li{padding:9px 2px}
+.hub-slider .hb-n{margin-bottom:6px}
+.hub-slider .hc-boards .hb-n small{display:none}
+.hub-slider .hb-c{gap:4px}
+.hub-slider .hb-c a{min-height:28px;padding:3px 10px;font-size:12px}
+.hub-slider .hb-c a.n{width:28px;min-width:28px;height:28px}
+.hub-slider .hub-list a{padding:9px 34px 9px 12px}
+.hub-slider .hub-list span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.hub-slider .hb-n small{display:none}
+.hub-slider .hc-jc .hb-n small{display:block}
+.hub-slider .hub-boards,.hub-slider .hub-list{display:flex;flex-direction:column;justify-content:flex-start}

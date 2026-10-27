@@ -80,6 +80,10 @@
       var g=e.target.closest('.cm-g'); if(g&&!g.classList.contains('on')){group(g.getAttribute('data-g'));return;}
       var i=e.target.closest('.cm-i'); if(i)preview(i);
     });
+    if(cm.classList.contains('cm-page')){
+      var fromHash=function(){var m=(location.hash||'').match(/^#t-(\w)$/);if(m&&q('.cm-tab[data-tab="'+m[1]+'"]'))tab(m[1]);};
+      fromHash(); window.addEventListener('hashchange',fromHash);
+    }
     cm.addEventListener('focusin',function(e){
       var g=e.target.closest('.cm-g'); if(g&&!g.classList.contains('on')){group(g.getAttribute('data-g'));return;}
       var i=e.target.closest('.cm-i'); if(i)preview(i);
@@ -93,4 +97,19 @@
     e.preventDefault();
     var dd=a.closest('details'); if(dd)dd.open=!dd.open;
   });}
+  /* home-hub:v3 — the six cards slide */
+  [].forEach.call(d.querySelectorAll('[data-slider]'),function(sl){
+    var tr=sl.querySelector('.hs-track'), cards=[].slice.call(tr.children), dots=sl.querySelector('.hs-dots'),
+        pv=sl.querySelector('.hs-prev'), nx=sl.querySelector('.hs-next');
+    function per(){var c=cards[0];return Math.max(1,Math.round(tr.clientWidth/(c.getBoundingClientRect().width+20)));}
+    function pages(){return Math.max(1,cards.length-per()+1);}
+    function cur(){var w=cards[0].getBoundingClientRect().width+20;return Math.min(pages()-1,Math.round(tr.scrollLeft/w));}
+    function go(i){i=Math.max(0,Math.min(pages()-1,i));tr.scrollTo({left:cards[i].offsetLeft-cards[0].offsetLeft,behavior:'smooth'});}
+    function build(){dots.innerHTML='';for(var i=0;i<pages();i++){var b=d.createElement('button');b.type='button';b.setAttribute('aria-label','Go to card '+(i+1));(function(k){b.addEventListener('click',function(){go(k)})})(i);dots.appendChild(b);}sync();}
+    function sync(){var c=cur();[].forEach.call(dots.children,function(b,i){b.classList.toggle('on',i===c)});pv.disabled=c<=0;nx.disabled=c>=pages()-1;}
+    pv.addEventListener('click',function(){go(cur()-1)}); nx.addEventListener('click',function(){go(cur()+1)});
+    var t; tr.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(sync,60)},{passive:true});
+    var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build,150)});
+    build();
+  });
 })();
