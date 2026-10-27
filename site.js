@@ -39,26 +39,29 @@
   var fq=d.querySelectorAll('.faq details');
   [].forEach.call(fq,function(x){x.addEventListener('toggle',function(){if(x.open&&window.innerWidth<900){[].forEach.call(fq,function(o){if(o!==x)o.open=false;});}});});
 })();
-/* course-menu:v1 — tabs, board/exam list, classes and the course card (in the menu and on the Courses page) */
+/* course-menu:v2 — tabs, board/exam list, classes and the course card (menu and Courses page) */
 (function(){
   var d=document;
   var desk=window.matchMedia('(min-width:1080px)'), hov=window.matchMedia('(hover:hover)');
   function init(cm){
     var q=function(s){return cm.querySelector(s)}, all=function(s){return [].slice.call(cm.querySelectorAll(s))};
-    var card=q('.cm-card'), K=q('.cm-k'), T=q('.cm-t'), D=q('.cm-d'), art=q('.cm-art'), go=q('.cm-go'), h2=q('.cm-h2');
+    var card=q('.cm-card'), K=q('.cm-k'), T=q('.cm-t'), D=q('.cm-d'), art=q('.cm-art'), go=q('.cm-go'), h2=q('.cm-h2'), pv=q('.cm-prev');
     function preview(a){
       if(!a||!card)return;
-      K.textContent=a.getAttribute('data-k'); T.textContent=a.getAttribute('data-t'); D.textContent=a.getAttribute('data-d');
+      K.innerHTML=a.getAttribute('data-k'); T.innerHTML=a.getAttribute('data-t'); D.innerHTML=a.getAttribute('data-d');
       var src='/img/cu/'+a.getAttribute('data-a')+'-700.webp';
       if(art.getAttribute('src')!==src)art.setAttribute('src',src);
-      var h=a.getAttribute('href'); card.setAttribute('href',h); go.setAttribute('href',h);
+      var h=a.getAttribute('href'), ask=a.getAttribute('data-f')==='0';
+      card.setAttribute('href',h); go.setAttribute('href',h);
+      go.innerHTML=ask?'Ask on WhatsApp &rarr;':'Open this page &rarr;';
+      if(pv)pv.classList.toggle('ask',ask);
     }
     function group(id){
       all('.cm-g').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-g')===id)});
       all('.cm-set').forEach(function(s){s.classList.toggle('on',s.getAttribute('data-set')===id)});
       var set=q('.cm-set.on');
-      if(set){ if(h2)h2.textContent=set.getAttribute('data-label');
-        preview(set.querySelector('.cm-i[aria-current]')||set.querySelector('.cm-i')); }
+      if(set){ if(h2)h2.innerHTML=set.getAttribute('data-label');
+        preview(set.querySelector('.cm-i[aria-current]')||set.querySelector('.cm-i[data-f="1"]')||set.querySelector('.cm-i')); }
     }
     function tab(t){
       all('.cm-tab').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-tab')===t)});
@@ -70,7 +73,7 @@
       var t=e.target.closest('.cm-tab'); if(t){tab(t.getAttribute('data-tab'));return;}
       var g=e.target.closest('.cm-g');
       if(g){ group(g.getAttribute('data-g'));
-        if(cm.classList.contains('cm-page')){var set=q('.cm-set.on');if(set&&!desk.matches)set.scrollIntoView({block:'nearest'});} }
+        if(!desk.matches){var set=q('.cm-set.on');if(set)set.scrollIntoView({block:'nearest',behavior:'smooth'});} }
     });
     cm.addEventListener('mouseover',function(e){
       if(!desk.matches||!hov.matches)return;

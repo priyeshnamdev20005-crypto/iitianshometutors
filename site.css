@@ -507,3 +507,53 @@ th{background:var(--lav)}
   .cm-page .cm-groups{margin-bottom:14px}
   .cm-page .cm-set.on{grid-template-columns:1fr 1fr}
 }
+/* ==== course-menu:v2 — more tabs, class grids, WhatsApp cards ==== */
+.cm-tabs{flex-wrap:wrap}
+.cm-tab{white-space:nowrap}
+.cm-set.on[data-cols="c"]{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+.cm-set.on[data-cols="n"]{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.cm-set[data-cols="n"] .cm-i b{font-size:16px}
+.cm-prev.ask .cm-feats,.cm-prev.ask .cm-demo{display:none}
+.cm .cm-i,.cm .cm-g,.cm-tab,.cm .cm-card{transition:transform .16s,box-shadow .16s,border-color .16s,background .16s}
+.cm .cm-i:active,.cm .cm-g:active,.cm-tab:active{transform:scale(.97)}
+.cm .cm-g:hover{transform:translateX(3px)}
+@media(min-width:1080px){
+  .dd-cm .dd-card.cm{max-width:none}
+  .cm-body{grid-template-columns:250px minmax(0,1.25fr) minmax(320px,1fr)}
+  .cm-set.on[data-cols="c"]{grid-template-columns:repeat(auto-fill,minmax(86px,1fr))}
+}
+/* the Courses page: the picker is the page */
+.cm-sec{padding:22px 0 36px}
+.cm-sec .crumb{margin-bottom:10px}
+.cm-sec .head{margin-bottom:16px}
+.cm-sec h1{font-family:var(--f-head);font-size:clamp(30px,4vw,46px);line-height:1.1;color:var(--ink);margin:6px 0 8px}
+.cm-sec .head p{max-width:70ch}
+@media(min-width:900px){
+  .cm-page .cm-body{grid-template-columns:270px minmax(0,1.5fr) minmax(340px,1fr)}
+  .cm-page .cm-set.on[data-cols="c"]{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+  .cm-page .cm-set.on[data-cols="n"]{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+  .cm-page .cm-i{min-height:76px}
+}
+/* ==== home-hub:v2 — six cards ==== */
+.hub.hub6{display:block;columns:1;column-gap:20px}
+.hub.hub6 .hub-card{grid-column:auto;break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 20px;width:100%}
+@media(min-width:760px){.hub.hub6{columns:2}}
+@media(min-width:1180px){.hub.hub6{columns:3}}
+.hc-jc{--hbg:linear-gradient(135deg,#fff5d1,#ffeedd);--hc:#b26b00;--hart:url(/img/cu/notes-700.jpg)}
+.hc-kids{--hbg:linear-gradient(135deg,#ffecf3,#f1edff);--hc:#d1356f;--hart:url(/img/cu/student-700.jpg)}
+.hc-comp{--hbg:linear-gradient(135deg,#eaf4ff,#e3f7ef);--hc:#2f68cc;--hart:url(/img/cu/hero-700.jpg)}
+.hub6 .hb-c a{min-height:34px;padding:5px 12px;font-size:13px;transition:transform .15s,background .15s,color .15s,border-color .15s,box-shadow .15s}
+.hub6 .hb-c a.pg{border-color:var(--purple-l)}
+.hub6 .hb-c a:hover,.hub6 .hb-c a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 14px rgba(91,69,214,.22)}
+.hub6 .hb-c a:active{transform:scale(.95)}
+.hub6 .hub-card{transition:transform .2s,box-shadow .2s}
+.hub6 .hub-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(76,64,160,.10),0 30px 60px rgba(76,64,160,.16)}
+.hub6 .hub-list a:active{transform:scale(.98)}
+@media(hover:none){.hub6 .hub-card:hover{transform:none}}
+/* ==== wide:v1 — use the whole screen width ==== */
+:root{--max:100%}
+@media(min-width:768px){
+  .wrap,.site-hd-in,.ft-in{padding-left:clamp(20px,2.6vw,48px);padding-right:clamp(20px,2.6vw,48px)}
+  .ft-legal{padding-left:clamp(20px,2.6vw,48px);padding-right:clamp(20px,2.6vw,48px)}
+}
+@media(max-width:1079px){.cm-page .cm-card{padding-right:108px}.cm-page .cm-art{width:82px;height:55px;right:12px;top:14px;bottom:auto}}
