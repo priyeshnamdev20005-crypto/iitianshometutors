@@ -946,3 +946,16 @@ th{background:var(--lav)}
 .hub-slider .hb-n small{display:none}
 .hub-slider .hc-jc .hb-n small{display:block}
 .hub-slider .hub-boards,.hub-slider .hub-list{display:flex;flex-direction:column;justify-content:flex-start}
+/* ==== info-pages:v1 ==== */
+.ic[id]{scroll-margin-top:96px}
+.ic:target{box-shadow:0 0 0 3px var(--purple-l),var(--sh-2)}
+.ic ul{margin:10px 0 0;padding-left:18px}
+.ic li{margin:4px 0;line-height:1.5}
+.ic-wa{display:inline-flex;margin-top:12px;font-weight:800;font-size:14.5px;color:var(--teal-d);text-decoration:none}
+.ic-wa:hover{text-decoration:underline}
+.ic-note p{margin:0;line-height:1.6}
+.ic-grid .ic{transition:transform .18s,box-shadow .18s}
+@media(hover:hover){.ic-grid .ic:hover{transform:translateY(-3px)}}
+.src-sec{padding:6px 0 0}
+.src{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+.src a{color:var(--muted)}

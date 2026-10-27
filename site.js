@@ -51,10 +51,10 @@
       K.innerHTML=a.getAttribute('data-k'); T.innerHTML=a.getAttribute('data-t'); D.innerHTML=a.getAttribute('data-d');
       var src='/img/cu/'+a.getAttribute('data-a')+'-700.webp';
       if(art.getAttribute('src')!==src)art.setAttribute('src',src);
-      var h=a.getAttribute('href'), ask=a.getAttribute('data-f')==='0';
+      var h=a.getAttribute('href'), f=a.getAttribute('data-f');
       card.setAttribute('href',h); go.setAttribute('href',h);
-      go.innerHTML=ask?'Ask on WhatsApp &rarr;':'Open this page &rarr;';
-      if(pv)pv.classList.toggle('ask',ask);
+      go.innerHTML=f==='0'?'Ask on WhatsApp &rarr;':'Open this page &rarr;';
+      if(pv)pv.classList.toggle('ask',f!=='1');
     }
     function group(id){
       all('.cm-g').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-g')===id)});
